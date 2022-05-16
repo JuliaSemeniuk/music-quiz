@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface Song {
+export interface BackendSong {
   audio: string;
   description: string;
   id: string;
@@ -9,14 +9,29 @@ export interface Song {
   songTitle: string;
 }
 
-export interface Question {
+export interface Song extends BackendSong {
+  isAnswered: boolean;
+  isActive: boolean;
+}
+
+export interface BackendQuizQuestion {
   genre: string;
   id: string;
-  data: Song[];
+  data: BackendSong[];
+}
+
+export interface QuizQuestion {
+  genre: string;
+  id: string;
+  questionAudioUrl: string;
+  isFinished: boolean;
+  isCorrectAnswerSelected: boolean;
+  correctAnswerId: string;
+  songs: Song[];
 }
 
 export interface QuizState {
-  questions: Question[];
+  questions: QuizQuestion[];
 }
 
 const initialState: QuizState = {
