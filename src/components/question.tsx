@@ -1,4 +1,5 @@
 import { QuizQuestion } from "../features/quiz/quizStoreSlice";
+import Button from "./button";
 import Option from "./option";
 import OptionInfo from "./option-info";
 
@@ -38,6 +39,11 @@ const Question: React.FC<Props> = ({ quizQuestion }) => {
           description={activeOptionInfo.description}
         />
       ) : null}
+
+      <Button
+        isCorrectAnswerSelected={quizQuestion.isCorrectAnswerSelected}
+        questionId={quizQuestion.id}
+      />
     </div>
   );
 };
