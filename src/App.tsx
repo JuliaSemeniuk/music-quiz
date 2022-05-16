@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { isTemplateTail } from "typescript";
 import "./App.css";
 import { useAppDispatch } from "./app/hooks";
-import { Quiz } from "./features/quiz/Quiz";
+import QuizPage from "./features/quiz/QuizPage";
 import {
   BackendQuizQuestion,
   init,
@@ -50,7 +50,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">{<Quiz />}</div>
+      <div className="container">
+        <QuizPage />
+      </div>
     </div>
   );
 }
