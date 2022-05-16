@@ -20,14 +20,14 @@ const dataForStore = (beckendData: BackendQuizQuestion[]): QuizQuestion[] => {
     return {
       genre: beckendQuiz.genre,
       id: beckendQuiz.id,
-      questionAudioUrl: mediaUrl + beckendQuiz.data[1].audio,
+      questionAudioUrl: mediaUrl + beckendQuiz.data[0].audio,
       isFinished: false,
       isCorrectAnswerSelected: false,
-      correctAnswerId: "1-1",
+      correctAnswerId: `${index + 1}-1`,
       songs: beckendQuiz.data.map((song) => {
         return {
           ...song,
-          isAnswered: false,
+          isSelected: false,
           isActive: false,
         };
       }),

@@ -11,7 +11,7 @@ export interface BackendSong {
 }
 
 export interface Song extends BackendSong {
-  isAnswered: boolean;
+  isSelected: boolean;
   isActive: boolean;
 }
 
@@ -49,16 +49,30 @@ export const quizStoreSlice = createSlice({
     },
     makeOptionSelected: (state, action) => {
       state.questions.forEach((question) => {
+        if (question.correctAnswerId === action.payload) {
+          question.isCorrectAnswerSelected = true;
+        }
         question.songs.forEach((song) => {
           if (song.id === action.payload) {
-            song.isAnswered = true;
+            song.isSelected = true;
           }
         });
       });
     },
+    // makeQuestionAnswered: (state, action) => {
+    //   state.questions.forEach((question) => {
+    //     if (question.correctAnswerId === action.payload) {
+    //       question.isCorrectAnswerSelected = true;
+    //     }
+    //   });
+    // },
   },
 });
 
-export const { init, makeOptionSelected } = quizStoreSlice.actions;
+export const {
+  init,
+  makeOptionSelected,
+  // makeQuestionAnswered
+} = quizStoreSlice.actions;
 
 export default quizStoreSlice.reducer;

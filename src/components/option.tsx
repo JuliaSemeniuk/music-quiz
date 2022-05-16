@@ -1,5 +1,8 @@
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { makeOptionSelected } from "../features/quiz/quizStoreSlice";
+import {
+  makeOptionSelected,
+  // makeQuestionAnswered,
+} from "../features/quiz/quizStoreSlice";
 
 interface Props {
   id: string;
@@ -10,7 +13,7 @@ interface Props {
   name: string;
 
   isActive: boolean; //just for choose and show info
-  isAnswered: boolean; //isAnswered - for highlighting red or green
+  isSelected: boolean; //isAnswered - for highlighting red or green
   correctAnswerId: string;
   isCorrectAnswerSelected: boolean;
 }
@@ -18,14 +21,15 @@ interface Props {
 const Option: React.FC<Props> = ({
   songTitle,
   id,
-  isAnswered,
+  isSelected,
   correctAnswerId,
+  isCorrectAnswerSelected,
 }) => {
   const dispatch = useAppDispatch();
 
   let style = {};
 
-  if (isAnswered) {
+  if (isSelected) {
     if (id === correctAnswerId) {
       style = { backgroundColor: "green" };
     } else {
@@ -36,7 +40,11 @@ const Option: React.FC<Props> = ({
   return (
     <div
       onClick={(event) => {
+        if (isCorrectAnswerSelected) {
+          return;
+        }
         dispatch(makeOptionSelected(id));
+        // dispatch(makeQuestionAnswered(id)); //isCorrecAnswerSelected
       }}
       style={style}
     >
