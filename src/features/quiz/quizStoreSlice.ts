@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Question from "../../components/question";
 
 export interface BackendSong {
   audio: string;
@@ -46,9 +47,18 @@ export const quizStoreSlice = createSlice({
       console.log("action", action);
       state.questions = action.payload;
     },
+    makeOptionSelected: (state, action) => {
+      state.questions.forEach((question) => {
+        question.songs.forEach((song) => {
+          if (song.id === action.payload) {
+            song.isAnswered = true;
+          }
+        });
+      });
+    },
   },
 });
 
-export const { init } = quizStoreSlice.actions;
+export const { init, makeOptionSelected } = quizStoreSlice.actions;
 
 export default quizStoreSlice.reducer;
