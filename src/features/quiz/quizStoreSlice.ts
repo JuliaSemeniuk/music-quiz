@@ -71,10 +71,22 @@ export const quizStoreSlice = createSlice({
         });
       });
     },
+
+    makeQuestionFinished: (state, action) => {
+      state.questions.forEach((question) => {
+        if (question.id === action.payload) {
+          question.isFinished = true;
+        }
+      });
+    },
   },
 });
 
-export const { init, makeOptionSelected, makeOptionActive } =
-  quizStoreSlice.actions;
+export const {
+  init,
+  makeOptionSelected,
+  makeOptionActive,
+  makeQuestionFinished,
+} = quizStoreSlice.actions;
 
 export default quizStoreSlice.reducer;

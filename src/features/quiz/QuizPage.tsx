@@ -17,7 +17,6 @@ const getCurrentQuestion = (
 
 const QuizPage: React.FC = () => {
   const questions = useAppSelector((state) => state.quiz.questions);
-  console.log(questions);
 
   const currentQuestion = getCurrentQuestion(questions);
 
@@ -27,6 +26,7 @@ const QuizPage: React.FC = () => {
 
   return (
     <div>
+      {}
       <Question quizQuestion={currentQuestion} />
     </div>
   );
