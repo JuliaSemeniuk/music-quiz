@@ -13,7 +13,7 @@ import {
 
 //API Links:
 const url = "https://levi9-song-quiz.herokuapp.com/api/data";
-const mediaUrl = "https://levi9-song-quiz.herokuapp.com/api/";
+export const mediaUrl = "https://levi9-song-quiz.herokuapp.com/api/";
 
 const chooseRandomSong = (songs: BackendSong[]) => {
   const randomValue = Math.random();

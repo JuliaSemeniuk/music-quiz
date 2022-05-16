@@ -1,11 +1,16 @@
 import { QuizQuestion } from "../features/quiz/quizStoreSlice";
 import Option from "./option";
+import OptionInfo from "./option-info";
 
 interface Props {
   quizQuestion: QuizQuestion;
 }
 
 const Question: React.FC<Props> = ({ quizQuestion }) => {
+  const activeOptionInfo = quizQuestion.songs.filter(
+    (currentOption) => currentOption.isActive === true
+  )[0];
+
   return (
     <div>
       {/* Question[n].QuestionAudioUrl */}
@@ -22,6 +27,17 @@ const Question: React.FC<Props> = ({ quizQuestion }) => {
           />
         );
       })}
+
+      {activeOptionInfo ? (
+        <OptionInfo
+          id={activeOptionInfo.id}
+          name={activeOptionInfo.name}
+          songTitle={activeOptionInfo.songTitle}
+          image={activeOptionInfo.image}
+          audio={activeOptionInfo.audio}
+          description={activeOptionInfo.description}
+        />
+      ) : null}
     </div>
   );
 };

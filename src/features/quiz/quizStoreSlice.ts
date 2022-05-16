@@ -59,9 +59,22 @@ export const quizStoreSlice = createSlice({
         });
       });
     },
+
+    makeOptionActive: (state, action) => {
+      state.questions.forEach((question) => {
+        question.songs.forEach((song) => {
+          if (song.id === action.payload) {
+            song.isActive = true;
+          } else {
+            song.isActive = false;
+          }
+        });
+      });
+    },
   },
 });
 
-export const { init, makeOptionSelected } = quizStoreSlice.actions;
+export const { init, makeOptionSelected, makeOptionActive } =
+  quizStoreSlice.actions;
 
 export default quizStoreSlice.reducer;

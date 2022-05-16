@@ -1,5 +1,8 @@
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { makeOptionSelected } from "../features/quiz/quizStoreSlice";
+import {
+  makeOptionSelected,
+  makeOptionActive,
+} from "../features/quiz/quizStoreSlice";
 
 interface Props {
   id: string;
@@ -37,6 +40,7 @@ const Option: React.FC<Props> = ({
   return (
     <div
       onClick={(event) => {
+        dispatch(makeOptionActive(id));
         if (isCorrectAnswerSelected) {
           return;
         }
