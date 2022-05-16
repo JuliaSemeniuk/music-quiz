@@ -20,7 +20,7 @@ const dataForStore = (beckendData: BackendQuizQuestion[]): QuizQuestion[] => {
     return {
       genre: beckendQuiz.genre,
       id: beckendQuiz.id,
-      questionAudioUrl: `${mediaUrl} + 'audio/' + ${index + 1}-1`,
+      questionAudioUrl: mediaUrl + beckendQuiz.data[1].audio,
       isFinished: false,
       isCorrectAnswerSelected: false,
       correctAnswerId: "1-1",

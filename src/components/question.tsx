@@ -8,6 +8,10 @@ interface Props {
 const Question: React.FC<Props> = ({ quizQuestion }) => {
   return (
     <div>
+      {/* Question[n].QuestionAudioUrl */}
+      <audio controls src={`${quizQuestion.questionAudioUrl}`}></audio>
+
+      {/* Question[n].Songs[] */}
       {quizQuestion.songs.map((song) => {
         return (
           <Option
