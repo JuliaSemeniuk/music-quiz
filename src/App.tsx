@@ -8,22 +8,41 @@ import {
   init,
   Song,
   QuizQuestion,
+  BackendSong,
 } from "./features/quiz/quizStoreSlice";
 
 //API Links:
 const url = "https://levi9-song-quiz.herokuapp.com/api/data";
 const mediaUrl = "https://levi9-song-quiz.herokuapp.com/api/";
 
+const chooseRandomSong = (songs: BackendSong[]) => {
+  const randomValue = Math.random();
+
+  if (randomValue < 0.25) {
+    return songs[0];
+  }
+  if (randomValue > 0.25 && randomValue < 0.5) {
+    return songs[1];
+  }
+  if (randomValue > 0.5 && randomValue < 0.75) {
+    return songs[2];
+  } else {
+    return songs[3];
+  }
+};
+
 //update format data as we need
 const dataForStore = (beckendData: BackendQuizQuestion[]): QuizQuestion[] => {
   return beckendData.map((beckendQuiz, index) => {
+    const randomSong = chooseRandomSong(beckendQuiz.data);
+    console.log("randomSong", randomSong);
     return {
       genre: beckendQuiz.genre,
       id: beckendQuiz.id,
-      questionAudioUrl: mediaUrl + beckendQuiz.data[0].audio,
+      questionAudioUrl: mediaUrl + randomSong.audio,
       isFinished: false,
       isCorrectAnswerSelected: false,
-      correctAnswerId: `${index + 1}-1`,
+      correctAnswerId: randomSong.id,
       songs: beckendQuiz.data.map((song) => {
         return {
           ...song,

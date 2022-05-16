@@ -59,20 +59,9 @@ export const quizStoreSlice = createSlice({
         });
       });
     },
-    // makeQuestionAnswered: (state, action) => {
-    //   state.questions.forEach((question) => {
-    //     if (question.correctAnswerId === action.payload) {
-    //       question.isCorrectAnswerSelected = true;
-    //     }
-    //   });
-    // },
   },
 });
 
-export const {
-  init,
-  makeOptionSelected,
-  // makeQuestionAnswered
-} = quizStoreSlice.actions;
+export const { init, makeOptionSelected } = quizStoreSlice.actions;
 
 export default quizStoreSlice.reducer;
