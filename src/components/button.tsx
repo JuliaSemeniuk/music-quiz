@@ -1,24 +1,20 @@
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { makeQuestionFinished } from "../features/quiz/quizStoreSlice";
+import React from "react";
 
 interface Props {
-  isCorrectAnswerSelected: boolean;
-  questionId: string;
+  isDisabled?: boolean;
+  onButtonClick: (event: React.SyntheticEvent) => void;
+  title: string;
 }
 
-const Button: React.FC<Props> = ({ isCorrectAnswerSelected, questionId }) => {
-  const dispatch = useAppDispatch();
-
+const Button: React.FC<Props> = ({
+  isDisabled = false,
+  onButtonClick,
+  title,
+}) => {
   return (
     <div>
-      <button
-        onClick={(event) => {
-          dispatch(makeQuestionFinished(questionId));
-        }}
-        type="button"
-        disabled={!isCorrectAnswerSelected}
-      >
-        Next
+      <button onClick={onButtonClick} type="button" disabled={isDisabled}>
+        {title.toUpperCase()}
       </button>
     </div>
   );

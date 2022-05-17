@@ -32,10 +32,14 @@ export interface QuizQuestion {
 }
 
 export interface QuizState {
+  userName: string;
+  isNameReady: boolean;
   questions: QuizQuestion[];
 }
 
 const initialState: QuizState = {
+  userName: "",
+  isNameReady: false,
   questions: [],
 };
 
@@ -79,6 +83,14 @@ export const quizStoreSlice = createSlice({
         }
       });
     },
+
+    fillUserName: (state, action) => {
+      state.userName = action.payload;
+    },
+
+    makeQuizReadyToStart: (state, action) => {
+      state.isNameReady = true;
+    },
   },
 });
 
@@ -87,6 +99,8 @@ export const {
   makeOptionSelected,
   makeOptionActive,
   makeQuestionFinished,
+  fillUserName,
+  makeQuizReadyToStart,
 } = quizStoreSlice.actions;
 
 export default quizStoreSlice.reducer;

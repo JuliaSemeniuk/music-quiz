@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { isTemplateTail } from "typescript";
 import "./App.css";
-import { useAppDispatch } from "./app/hooks";
+import { useAppDispatch, useAppSelector } from "./app/hooks";
+import Login from "./components/login";
 import QuizPage from "./features/quiz/QuizPage";
 import {
   BackendQuizQuestion,
@@ -67,11 +68,11 @@ function App() {
     getData();
   }, []);
 
+  const isNameReady = useAppSelector((state) => state.quiz.isNameReady);
+
   return (
     <div className="App">
-      <div className="container">
-        <QuizPage />
-      </div>
+      <div className="container">{!isNameReady ? <Login /> : <QuizPage />}</div>
     </div>
   );
 }

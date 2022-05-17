@@ -3,14 +3,28 @@ import Button from "./button";
 import Option from "./option";
 import OptionInfo from "./option-info";
 
+//next-question-button
+import { makeQuestionFinished } from "../features/quiz/quizStoreSlice";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import React from "react";
+
 interface Props {
   quizQuestion: QuizQuestion;
+  isLastQuestion: boolean;
 }
 
-const Question: React.FC<Props> = ({ quizQuestion }) => {
+const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion }) => {
+  const dispatch = useAppDispatch();
+
   const activeOptionInfo = quizQuestion.songs.filter(
     (currentOption) => currentOption.isActive === true
   )[0];
+
+  const activateNextQuestionButton = (event: React.SyntheticEvent) => {
+    dispatch(makeQuestionFinished(quizQuestion.id));
+  };
+
+  const isNextQuestionButtonDisabled = !quizQuestion.isCorrectAnswerSelected;
 
   return (
     <div>
@@ -41,8 +55,9 @@ const Question: React.FC<Props> = ({ quizQuestion }) => {
       ) : null}
 
       <Button
-        isCorrectAnswerSelected={quizQuestion.isCorrectAnswerSelected}
-        questionId={quizQuestion.id}
+        isDisabled={isNextQuestionButtonDisabled}
+        onButtonClick={activateNextQuestionButton}
+        title={!isLastQuestion ? "next question" : "see my score"}
       />
     </div>
   );
