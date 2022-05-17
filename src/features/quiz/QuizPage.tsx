@@ -5,6 +5,7 @@ import Login from "../../components/login";
 
 import Question from "../../components/question";
 import { QuizQuestion } from "./quizStoreSlice";
+import QuestionHeader from "../../components/qustion-header";
 
 const getCurrentQuestion = (
   questions: QuizQuestion[]
@@ -31,6 +32,7 @@ const QuizPage: React.FC = () => {
 
   return (
     <div>
+      <QuestionHeader />
       <Question
         quizQuestion={currentQuestion}
         isLastQuestion={isLastQuestion}
