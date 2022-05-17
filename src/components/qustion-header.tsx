@@ -3,9 +3,9 @@ import { useAppSelector } from "../app/hooks";
 const QuestionHeader = () => {
   return (
     <div>
-      <div>logo</div>
+      <div> </div>
       <div>{useAppSelector((state) => state.quiz.userName)}</div>
-      <div>quiz.score</div>
+      <div>{useAppSelector((state) => state.quiz.finalScore)}</div>
     </div>
   );
 };

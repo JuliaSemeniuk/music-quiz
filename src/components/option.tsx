@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from "../app/hooks";
 import {
   makeOptionSelected,
   makeOptionActive,
+  setQuestionScore,
 } from "../features/quiz/quizStoreSlice";
 
 interface Props {
@@ -45,6 +46,7 @@ const Option: React.FC<Props> = ({
           return;
         }
         dispatch(makeOptionSelected(id));
+        dispatch(setQuestionScore(id));
       }}
       style={style}
     >

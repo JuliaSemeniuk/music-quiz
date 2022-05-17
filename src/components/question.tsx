@@ -4,7 +4,10 @@ import Option from "./option";
 import OptionInfo from "./option-info";
 
 //next-question-button
-import { makeQuestionFinished } from "../features/quiz/quizStoreSlice";
+import {
+  makeQuestionFinished,
+  addScore,
+} from "../features/quiz/quizStoreSlice";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import React from "react";
 
@@ -22,6 +25,7 @@ const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion }) => {
 
   const activateNextQuestionButton = (event: React.SyntheticEvent) => {
     dispatch(makeQuestionFinished(quizQuestion.id));
+    dispatch(addScore(quizQuestion.score));
   };
 
   const isNextQuestionButtonDisabled = !quizQuestion.isCorrectAnswerSelected;

@@ -28,18 +28,21 @@ export interface QuizQuestion {
   isFinished: boolean;
   isCorrectAnswerSelected: boolean;
   correctAnswerId: string;
+  score: number;
   songs: Song[];
 }
 
 export interface QuizState {
   userName: string;
   isNameReady: boolean;
+  finalScore: number;
   questions: QuizQuestion[];
 }
 
 const initialState: QuizState = {
   userName: "",
   isNameReady: false,
+  finalScore: 0,
   questions: [],
 };
 
@@ -91,6 +94,18 @@ export const quizStoreSlice = createSlice({
     makeQuizReadyToStart: (state, action) => {
       state.isNameReady = true;
     },
+
+    setQuestionScore: (state, action) => {
+      state.questions.forEach((question) => {
+        if (question.correctAnswerId !== action.payload) {
+          question.score = question.score - 1;
+        }
+      });
+    },
+
+    addScore: (state, action) => {
+      state.finalScore = state.finalScore + action.payload;
+    },
   },
 });
 
@@ -101,6 +116,8 @@ export const {
   makeQuestionFinished,
   fillUserName,
   makeQuizReadyToStart,
+  setQuestionScore,
+  addScore,
 } = quizStoreSlice.actions;
 
 export default quizStoreSlice.reducer;

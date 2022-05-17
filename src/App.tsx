@@ -44,6 +44,7 @@ const dataForStore = (beckendData: BackendQuizQuestion[]): QuizQuestion[] => {
       isFinished: false,
       isCorrectAnswerSelected: false,
       correctAnswerId: randomSong.id,
+      score: 4,
       songs: beckendQuiz.data.map((song) => {
         return {
           ...song,
