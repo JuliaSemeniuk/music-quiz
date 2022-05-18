@@ -11,8 +11,6 @@ const ProgressBarItem: React.FC<Props> = ({
   isCurrentBarItem,
   isCorrectAnswerSelected,
 }) => {
-  //не має доступу до пропсів внє компонента
-
   let color = "";
 
   if (isFinished === true) {

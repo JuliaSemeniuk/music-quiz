@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import { isTemplateTail } from "typescript";
 import "./App.css";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
+import FinalScore from "./components/final-score";
 import Login from "./components/login";
+import Question from "./components/question";
 import QuizPage from "./features/quiz/QuizPage";
 import {
   BackendQuizQuestion,
@@ -70,10 +72,22 @@ function App() {
   }, []);
 
   const isNameReady = useAppSelector((state) => state.quiz.isNameReady);
+  const questions = useAppSelector((state) => state.quiz.questions);
+  const isQuizEnded = questions.every(
+    (question) => question.isFinished === true
+  );
 
   return (
     <div className="App">
-      <div className="container">{!isNameReady ? <Login /> : <QuizPage />}</div>
+      <div className="container">
+        {!isNameReady ? (
+          <Login />
+        ) : !isQuizEnded ? (
+          <QuizPage />
+        ) : (
+          <FinalScore />
+        )}
+      </div>
     </div>
   );
 }
