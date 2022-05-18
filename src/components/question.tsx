@@ -43,6 +43,7 @@ const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion }) => {
             {...song}
             isCorrectAnswerSelected={quizQuestion.isCorrectAnswerSelected}
             correctAnswerId={quizQuestion.correctAnswerId}
+            questionId={quizQuestion.id}
           />
         );
       })}

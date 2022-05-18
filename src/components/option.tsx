@@ -1,4 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../app/hooks";
+
 import {
   makeOptionSelected,
   makeOptionActive,
@@ -17,6 +18,7 @@ interface Props {
   isSelected: boolean; //isAnswered - for highlighting red or green
   correctAnswerId: string;
   isCorrectAnswerSelected: boolean;
+  questionId: string;
 }
 
 const Option: React.FC<Props> = ({
@@ -25,6 +27,7 @@ const Option: React.FC<Props> = ({
   isSelected,
   correctAnswerId,
   isCorrectAnswerSelected,
+  questionId,
 }) => {
   const dispatch = useAppDispatch();
 
@@ -46,7 +49,7 @@ const Option: React.FC<Props> = ({
           return;
         }
         dispatch(makeOptionSelected(id));
-        dispatch(setQuestionScore(id));
+        dispatch(setQuestionScore(questionId));
       }}
       style={style}
     >

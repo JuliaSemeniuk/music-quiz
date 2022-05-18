@@ -97,7 +97,7 @@ export const quizStoreSlice = createSlice({
 
     setQuestionScore: (state, action) => {
       state.questions.forEach((question) => {
-        if (question.correctAnswerId !== action.payload) {
+        if (question.id === action.payload) {
           question.score = question.score - 1;
         }
       });
