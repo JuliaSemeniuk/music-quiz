@@ -12,6 +12,7 @@ import {
   Song,
   QuizQuestion,
   BackendSong,
+  quizStoreSlice,
 } from "./features/quiz/quizStoreSlice";
 
 //API Links:
@@ -76,6 +77,7 @@ function App() {
   const isQuizEnded = questions.every(
     (question) => question.isFinished === true
   );
+  const userName = useAppSelector((state) => state.quiz.userName);
 
   return (
     <div className="App">
@@ -85,7 +87,7 @@ function App() {
         ) : !isQuizEnded ? (
           <QuizPage />
         ) : (
-          <FinalScore />
+          <FinalScore userName={userName} />
         )}
       </div>
     </div>
