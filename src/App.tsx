@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { isTemplateTail } from "typescript";
-import "./App.css";
+import "./App.scss";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
 import FinalScore from "./components/final-score";
 import Login from "./components/login";
