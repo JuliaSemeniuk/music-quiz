@@ -38,15 +38,17 @@ const chooseRandomSong = (songs: BackendSong[]) => {
 //update format data as we need
 const dataForStore = (beckendData: BackendQuizQuestion[]): QuizQuestion[] => {
   return beckendData.map((beckendQuiz, index) => {
-    const randomSong = chooseRandomSong(beckendQuiz.data);
-    console.log("randomSong", randomSong);
+    // const randomSong = chooseRandomSong(beckendQuiz.data);
+    // console.log("randomSong", randomSong);
     return {
       genre: beckendQuiz.genre,
       id: beckendQuiz.id,
-      questionAudioUrl: mediaUrl + randomSong.audio,
+      // questionAudioUrl: mediaUrl + randomSong.audio,
+      questionAudioUrl: "",
       isFinished: false,
       isCorrectAnswerSelected: false,
-      correctAnswerId: randomSong.id,
+      // correctAnswerId: randomSong.id,
+      correctAnswerId: "",
       score: 4,
       songs: beckendQuiz.data.map((song) => {
         return {
@@ -59,6 +61,17 @@ const dataForStore = (beckendData: BackendQuizQuestion[]): QuizQuestion[] => {
   });
 };
 
+export const makeRandom = (questions: QuizQuestion[]) => {
+  return questions.map((question) => {
+    const randomSong = chooseRandomSong(question.songs);
+    return {
+      ...question,
+      questionAudioUrl: mediaUrl + randomSong.audio,
+      correctAnswerId: randomSong.id,
+    };
+  });
+};
+
 function App() {
   const dispatch = useAppDispatch();
 
@@ -66,7 +79,7 @@ function App() {
     const getData = async () => {
       const preResult = await fetch(url);
       const result = await preResult.json();
-      dispatch(init(dataForStore(result)));
+      dispatch(init(makeRandom(dataForStore(result))));
     };
 
     getData();

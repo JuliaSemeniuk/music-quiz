@@ -1,4 +1,5 @@
-import { useAppSelector } from "../app/hooks";
+import { useAppSelector, useAppDispatch } from "../app/hooks";
+import { makeQuizReadyToRepeat } from "../features/quiz/quizStoreSlice";
 import Button from "./button";
 
 interface Props {
@@ -6,7 +7,12 @@ interface Props {
 }
 
 const FinalScore: React.FC<Props> = ({ userName }) => {
+  const dispatch = useAppDispatch();
+
   const finalScore = useAppSelector((state) => state.quiz.finalScore);
+  const repeatQuiz = () => {
+    dispatch(makeQuizReadyToRepeat(""));
+  };
   return (
     <div>
       <div>{finalScore}</div>
@@ -15,6 +21,7 @@ const FinalScore: React.FC<Props> = ({ userName }) => {
           ? `${userName}, you can do better, try again!`
           : `${userName}, did so great!`}
       </div>
+      <Button onButtonClick={repeatQuiz} title="try again" />
     </div>
   );
 };

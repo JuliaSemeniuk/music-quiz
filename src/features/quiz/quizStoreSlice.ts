@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import Question from "../../components/question";
+import { makeRandom } from "../../App";
 
 export interface BackendSong {
   audio: string;
@@ -29,6 +30,7 @@ export interface QuizQuestion {
   isCorrectAnswerSelected: boolean;
   correctAnswerId: string;
   score: number;
+
   songs: Song[];
 }
 
@@ -36,6 +38,7 @@ export interface QuizState {
   userName: string;
   isNameReady: boolean;
   finalScore: number;
+  isRepeat: boolean;
   questions: QuizQuestion[];
 }
 
@@ -43,6 +46,7 @@ const initialState: QuizState = {
   userName: "",
   isNameReady: false,
   finalScore: 0,
+  isRepeat: false,
   questions: [],
 };
 
@@ -106,6 +110,20 @@ export const quizStoreSlice = createSlice({
     addScore: (state, action) => {
       state.finalScore = state.finalScore + action.payload;
     },
+
+    makeQuizReadyToRepeat: (state, action) => {
+      state.isRepeat = true;
+      state.finalScore = 0;
+      state.questions.forEach((question) => {
+        question.isCorrectAnswerSelected = false;
+        question.isFinished = false;
+        question.score = 4;
+        question.songs.forEach((song) => {
+          song.isSelected = false;
+        });
+      });
+      state.questions = makeRandom(state.questions);
+    },
   },
 });
 
@@ -118,6 +136,7 @@ export const {
   makeQuizReadyToStart,
   setQuestionScore,
   addScore,
+  makeQuizReadyToRepeat,
 } = quizStoreSlice.actions;
 
 export default quizStoreSlice.reducer;
