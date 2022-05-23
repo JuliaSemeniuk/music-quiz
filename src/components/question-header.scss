@@ -1,0 +1,23 @@
+@import "../scss/custom";
+
+.header__container {
+  padding: 12px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__items {
+  display: flex;
+  justify-content: space-between;
+  color: $gray-200;
+}
+.header__username {
+  margin-right: 20px;
+  font-weight: bold;
+}
+.header__score-title {
+  margin-right: 8px;
+}
+.header__score {
+  font-weight: bold;
+}

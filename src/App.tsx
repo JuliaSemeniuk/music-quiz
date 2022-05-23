@@ -93,7 +93,7 @@ function App() {
   const userName = useAppSelector((state) => state.quiz.userName);
 
   return (
-    <div className="App">
+    <div className="wrapper">
       <div className="container">
         {!isNameReady ? (
           <Login />

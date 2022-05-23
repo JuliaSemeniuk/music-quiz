@@ -6,6 +6,8 @@ import { QuizQuestion } from "./quizStoreSlice";
 import QuestionHeader from "../../components/qustion-header";
 import ProgressBar from "../../components/progress-bar";
 
+import "../quiz/QuizPage.scss";
+
 const getCurrentQuestion = (
   questions: QuizQuestion[]
 ): QuizQuestion | undefined => {
@@ -45,7 +47,7 @@ const QuizPage: React.FC = () => {
   });
 
   return (
-    <div>
+    <div className="quiz__container">
       <QuestionHeader />
       <ProgressBar progressBar={progressBar} />
       <Question

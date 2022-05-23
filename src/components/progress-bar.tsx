@@ -1,4 +1,5 @@
 import ProgressBarItem from "./progress-bar-item";
+import "../components/progress-bar.scss";
 
 interface ProgressBarItem {
   genre: string;
@@ -13,9 +14,17 @@ interface Props {
 
 const ProgressBar: React.FC<Props> = ({ progressBar }) => {
   return (
-    <div>
-      {progressBar.map((progressBarItem) => {
-        return <ProgressBarItem {...progressBarItem} />;
+    <div className="quiz__progressbar progressbar">
+      {progressBar.map((progressBarItem, index) => {
+        return (
+          <ProgressBarItem
+            {...progressBarItem}
+            isLastFinishedItem={
+              progressBar[index + 1] &&
+              progressBar[index + 1].isCorrectAnswerSelected === true
+            }
+          />
+        );
       })}
     </div>
   );

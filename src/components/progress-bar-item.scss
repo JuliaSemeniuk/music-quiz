@@ -1,0 +1,23 @@
+.progressbar__item {
+  width: 25%;
+}
+
+.progressbar__item:last-child {
+  .progressbar__arrow {
+    display: none;
+  }
+}
+.progressbar__stripe {
+  height: 10px;
+  width: 100%;
+}
+
+.progressbar__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.progressbar__genre {
+}
+.progressbar__arrow {
+}
