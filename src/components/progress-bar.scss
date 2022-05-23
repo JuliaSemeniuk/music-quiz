@@ -1,4 +1,8 @@
+@import "../scss/custom";
+
 .progressbar {
   display: flex;
   justify-content: space-between;
+  border: 0 solid $deepblue-medium;
+  border-bottom-width: 2px;
 }
