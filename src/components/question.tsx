@@ -89,6 +89,7 @@ const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion, title }) => {
           />
         ) : null}
       </div>
+
       <Button
         isDisabled={isNextQuestionButtonDisabled}
         onButtonClick={activateNextQuestionButton}

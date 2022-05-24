@@ -1,0 +1,49 @@
+@import "../scss/custom";
+
+.button__container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 5px;
+
+  img {
+    padding-left: 10px;
+  }
+}
+.button {
+  padding: 20px;
+  border-radius: 5px;
+  color: $white;
+  font-weight: bold;
+  font-size: 20px;
+  //   background: linear-gradient(
+  //     90deg,
+  //     rgba(128, 128, 128, 1) 0%,
+  //     rgba(101, 101, 101, 1) 100%
+  //   );
+}
+
+.button__disabled {
+  background: linear-gradient(
+    90deg,
+    rgba(128, 128, 128, 1) 0%,
+    rgba(101, 101, 101, 1) 100%
+  );
+}
+
+.button__active {
+  background: linear-gradient(
+    90deg,
+    rgba(126, 85, 178, 1) 0%,
+    rgba(167, 105, 195, 1) 100%
+  );
+}
+
+.button__active:hover,
+.button__active:active {
+  background: linear-gradient(
+    90deg,
+    rgba(126, 85, 178, 0.7) 0%,
+    rgba(167, 105, 195, 0.7) 100%
+  );
+}

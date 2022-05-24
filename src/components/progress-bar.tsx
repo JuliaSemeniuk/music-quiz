@@ -18,6 +18,7 @@ const ProgressBar: React.FC<Props> = ({ progressBar }) => {
       {progressBar.map((progressBarItem, index) => {
         return (
           <ProgressBarItem
+            key={progressBarItem.genre}
             {...progressBarItem}
             isLastFinishedItem={
               progressBar[index + 1] &&

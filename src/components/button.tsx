@@ -1,5 +1,7 @@
 import React from "react";
-import "../scss/components/_button.scss";
+import "../components/button.scss";
+import Arrow from "../images/arrow.svg";
+import classnames from "classnames";
 
 interface Props {
   isDisabled?: boolean;
@@ -13,9 +15,25 @@ const Button: React.FC<Props> = ({
   title,
 }) => {
   return (
-    <div>
-      <button onClick={onButtonClick} type="button" disabled={isDisabled}>
+    <div className="button__container">
+      <button
+        className={classnames("button", {
+          button__disabled: isDisabled,
+          button__active: !isDisabled,
+        })}
+        onClick={onButtonClick}
+        type="button"
+        disabled={isDisabled}
+      >
+        {/* </button> */}
+        {/* <button
+        className="button"
+        onClick={onButtonClick}
+        type="button"
+        disabled={isDisabled}
+      > */}
         {title.toUpperCase()}
+        <img src={Arrow} alt="" />
       </button>
     </div>
   );
