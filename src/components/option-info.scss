@@ -1,0 +1,10 @@
+@import "../scss/custom";
+.option-info__container {
+  width: 55%;
+}
+
+@media (max-width: 1276px) {
+  .option-info__container {
+    width: 100%;
+  }
+}

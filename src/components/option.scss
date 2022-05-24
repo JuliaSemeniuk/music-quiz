@@ -1,0 +1,50 @@
+@import "../scss/custom";
+
+.option__item {
+  display: flex;
+  //   justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid $deepblue-light;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  color: $gray-light;
+}
+
+.option__item:last-child {
+  margin-bottom: 0px;
+}
+
+.option__correct {
+  border: 1px solid $green-light;
+  background-color: $green-dark;
+  color: $white;
+}
+
+.option__uncorrect {
+  border: 1px solid $red-light;
+  background-color: $red-dark;
+  color: $white;
+}
+
+.item__container {
+  padding-right: 20px;
+}
+
+.item__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid $deepblue-light;
+  width: 30px;
+  height: 30px;
+}
+
+.item__check-correct {
+  border: 1px solid $green-light;
+}
+
+.item__check-uncorrect {
+  border: 1px solid $red-light;
+}

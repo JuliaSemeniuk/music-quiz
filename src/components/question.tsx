@@ -36,33 +36,33 @@ const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion, title }) => {
   const isNextQuestionButtonDisabled = !quizQuestion.isCorrectAnswerSelected;
 
   return (
-    <div className="question__container">
-      <div className="audio__container">
-        <div className="question__header">
-          <div className="question__title">{title} song</div>
-          <div className="question__subtitle">
-            Listen to the audio and guess what song is it from the list
+    <>
+      <div className="question__container">
+        <div className="audio__container">
+          <div className="question__header">
+            <div className="question__title">{title} song</div>
+            <div className="question__subtitle">
+              Listen to the audio and guess what song is it from the list
+            </div>
           </div>
-        </div>
-        <div className="question__audio">
-          <img
-            className="audio__picture"
-            id="audio_picture"
-            src={AudioPicture}
-            alt="audio"
-          />
-          <audio
-            className="audio__player"
-            controls
-            src={`${quizQuestion.questionAudioUrl}`}
-          ></audio>
-        </div>
+          <div className="question__audio">
+            <img
+              className="audio__picture"
+              id="audio_picture"
+              src={AudioPicture}
+              alt="audio"
+            />
+            <audio
+              className="audio__player"
+              controls
+              src={`${quizQuestion.questionAudioUrl}`}
+            ></audio>
+          </div>
 
-        <div className="question__options">
-          <ul className="options__list">
-            {quizQuestion.songs.map((song) => {
-              return (
-                <li className="option">
+          <div className="question__options">
+            <ul className="options__list">
+              {quizQuestion.songs.map((song) => {
+                return (
                   <Option
                     key={song.id}
                     {...song}
@@ -72,30 +72,29 @@ const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion, title }) => {
                     correctAnswerId={quizQuestion.correctAnswerId}
                     questionId={quizQuestion.id}
                   />
-                </li>
-              );
-            })}
-          </ul>
+                );
+              })}
+            </ul>
+          </div>
         </div>
+
+        {activeOptionInfo ? (
+          <OptionInfo
+            id={activeOptionInfo.id}
+            name={activeOptionInfo.name}
+            songTitle={activeOptionInfo.songTitle}
+            image={activeOptionInfo.image}
+            audio={activeOptionInfo.audio}
+            description={activeOptionInfo.description}
+          />
+        ) : null}
       </div>
-
-      {activeOptionInfo ? (
-        <OptionInfo
-          id={activeOptionInfo.id}
-          name={activeOptionInfo.name}
-          songTitle={activeOptionInfo.songTitle}
-          image={activeOptionInfo.image}
-          audio={activeOptionInfo.audio}
-          description={activeOptionInfo.description}
-        />
-      ) : null}
-
       <Button
         isDisabled={isNextQuestionButtonDisabled}
         onButtonClick={activateNextQuestionButton}
         title={!isLastQuestion ? "next question" : "see my score"}
       />
-    </div>
+    </>
   );
 };
 

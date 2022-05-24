@@ -1,10 +1,15 @@
 import { useAppDispatch, useAppSelector } from "../app/hooks";
+import classnames from "classnames";
 
 import {
   makeOptionSelected,
   makeOptionActive,
   setQuestionScore,
 } from "../features/quiz/quizStoreSlice";
+
+import "../components/option.scss";
+import CheckItem from "../images/check-item.svg";
+import CrossCheckItem from "../images/cross-check-item.svg";
 
 interface Props {
   id: string;
@@ -31,18 +36,22 @@ const Option: React.FC<Props> = ({
 }) => {
   const dispatch = useAppDispatch();
 
-  let style = {};
+  // let style = {};
 
-  if (isSelected) {
-    if (id === correctAnswerId) {
-      style = { backgroundColor: "green" };
-    } else {
-      style = { backgroundColor: "red" };
-    }
-  }
+  // if (isSelected) {
+  //   if (id === correctAnswerId) {
+  //     style = { backgroundColor: "green" };
+  //   } else {
+  //     style = { backgroundColor: "red" };
+  //   }
+  // }
 
   return (
     <div
+      className={classnames("option__item", {
+        option__correct: isSelected && id === correctAnswerId,
+        option__uncorrect: isSelected && id !== correctAnswerId,
+      })}
       onClick={(event) => {
         dispatch(makeOptionActive(id));
         if (isCorrectAnswerSelected) {
@@ -51,8 +60,24 @@ const Option: React.FC<Props> = ({
         dispatch(makeOptionSelected(id));
         dispatch(setQuestionScore(questionId));
       }}
-      style={style}
+      // style={style}
     >
+      <div className="item__container">
+        {isSelected ? (
+          correctAnswerId === id ? (
+            <div className="item__check item__check-correct">
+              <img src={CheckItem} alt="check" />
+            </div>
+          ) : (
+            <div className="item__check item__check-uncorrect">
+              <img src={CrossCheckItem} alt="check" />
+            </div>
+          )
+        ) : (
+          <div className="item__check"></div>
+        )}
+      </div>
+
       <div>{songTitle}</div>
     </div>
   );

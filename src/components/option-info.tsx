@@ -1,4 +1,5 @@
 import { mediaUrl } from "../../src/App";
+import "../components/option-info.scss";
 
 interface Props {
   id: string;
@@ -22,7 +23,7 @@ const OptionInfo: React.FC<Props> = ({
   description,
 }) => {
   return (
-    <div className="">
+    <div className="option-info__container">
       <div>{`${name} - ${songTitle}`}</div>
       <div>
         <img style={{ width: "50%" }} src={mediaUrl + image} />
