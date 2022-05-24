@@ -24,12 +24,16 @@ const OptionInfo: React.FC<Props> = ({
 }) => {
   return (
     <div className="option-info__container">
-      <div>{`${name} - ${songTitle}`}</div>
-      <div>
-        <img style={{ width: "50%" }} src={mediaUrl + image} />
+      <div className="option-info__title">{`${name} - ${songTitle}`}</div>
+      <div className="option-info__image">
+        <img src={mediaUrl + image} />
       </div>
-      <audio controls src={`${mediaUrl + audio}`}></audio>
-      <div>{description}</div>
+      <audio
+        className="option-info__player"
+        controls
+        src={`${mediaUrl + audio}`}
+      ></audio>
+      <div className="option-info__description">{description}</div>
     </div>
   );
 };

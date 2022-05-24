@@ -8,3 +8,25 @@
     width: 100%;
   }
 }
+
+.option-info__title {
+  font-size: 20px;
+  font-family: "Prompt", sans-serif;
+  font-weight: bold;
+  padding: 8px 0px;
+}
+
+.option-info__image {
+  padding-top: 20px;
+}
+
+.option-info__image img,
+.option-info__player {
+  width: 100%;
+}
+
+.option-info__description {
+  padding-top: 20px;
+  color: $gray-light;
+  text-align: center;
+}
