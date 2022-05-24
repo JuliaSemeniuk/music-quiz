@@ -25,13 +25,6 @@ const Button: React.FC<Props> = ({
         type="button"
         disabled={isDisabled}
       >
-        {/* </button> */}
-        {/* <button
-        className="button"
-        onClick={onButtonClick}
-        type="button"
-        disabled={isDisabled}
-      > */}
         {title.toUpperCase()}
         <img src={Arrow} alt="" />
       </button>

@@ -2,6 +2,7 @@ import { QuizQuestion } from "../features/quiz/quizStoreSlice";
 import Button from "./button";
 import Option from "./option";
 import OptionInfo from "./option-info";
+import { mediaUrl } from "../App";
 
 //next-question-button
 import {
@@ -19,14 +20,35 @@ interface Props {
   quizQuestion: QuizQuestion;
   isLastQuestion: boolean;
   title: string;
+  isCorrectAnswerSelected: boolean;
 }
 
-const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion, title }) => {
+const Question: React.FC<Props> = ({
+  quizQuestion,
+  isLastQuestion,
+  title,
+  isCorrectAnswerSelected,
+}) => {
   const dispatch = useAppDispatch();
 
   const activeOptionInfo = quizQuestion.songs.filter(
     (currentOption) => currentOption.isActive === true
   )[0];
+
+  const correctAnswer = quizQuestion.songs.filter((song) => {
+    if (
+      quizQuestion.isCorrectAnswerSelected === true &&
+      song.id === quizQuestion.correctAnswerId
+    ) {
+      return true;
+    }
+  })[0];
+
+  const correctImage = correctAnswer
+    ? mediaUrl + correctAnswer.image
+    : AudioPicture;
+
+  console.log(correctAnswer);
 
   const activateNextQuestionButton = (event: React.SyntheticEvent) => {
     dispatch(makeQuestionFinished(quizQuestion.id));
@@ -49,7 +71,7 @@ const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion, title }) => {
             <img
               className="audio__picture"
               id="audio_picture"
-              src={AudioPicture}
+              src={correctImage}
               alt="audio"
             />
             <audio

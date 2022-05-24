@@ -55,6 +55,7 @@ const QuizPage: React.FC = () => {
           quizQuestion={currentQuestion}
           isLastQuestion={isLastQuestion}
           title={currentQuestion.genre}
+          isCorrectAnswerSelected={currentQuestion.isCorrectAnswerSelected}
         />
       </div>
     </div>
