@@ -1,0 +1,60 @@
+@import "../scss/custom";
+.question__container {
+  width: 100%;
+}
+.question__header {
+  // margin-bottom: 8px;
+  padding: 8px 0px;
+}
+
+.question__title {
+  text-transform: capitalize;
+  text-shadow: 1px 1px 2px black;
+  font-size: 30px;
+  font-family: "Prompt", sans-serif;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.question__subtitle {
+  color: $gray-light;
+}
+
+.audio__container {
+  width: calc(33% - 48px - 48px);
+}
+
+.question__audio {
+  background-color: $deepblue-dark;
+}
+
+// audio::-webkit-media-controls-mute-button,
+// // audio::-webkit-media-controls-play-button,
+// // audio::-webkit-media-controls-timeline-container,
+// audio::-webkit-media-controls-current-time-display,
+// audio::-webkit-media-controls-time-remaining-display,
+// // audio::-webkit-media-controls-timeline,
+// audio::-webkit-media-controls-volume-slider-container,
+// audio::-webkit-media-controls-volume-slider,
+// audio::-webkit-media-controls-seek-back-button,
+// audio::-webkit-media-controls-seek-forward-button,
+// audio::-webkit-media-controls-fullscreen-button,
+// audio::-webkit-media-controls-rewind-button,
+// audio::-webkit-media-controls-return-to-realtime-button,
+// audio::-webkit-media-controls-toggle-closed-captions-button {
+//   display: none;
+// }
+
+// audio::-webkit-media-controls-panel {
+//   background-color: $deepblue-dark;
+//   border: 2px solid $deepblue-dark;
+// }
+
+// audio::-webkit-media-controls-play-button {
+//   background-color: #373b62;
+//   border-radius: 50%;
+// }
+
+// audio::-webkit-media-controls-play-button:hover {
+//   background-color: rgba(233, 233, 233, 0.7);
+// }

@@ -10,13 +10,18 @@ import {
 } from "../features/quiz/quizStoreSlice";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import React from "react";
+import "../components/question.scss";
+
+import AudioPicture from "../images/audio-picture.svg";
+import AudioPlayPicture from "../images/play-icon.svg";
 
 interface Props {
   quizQuestion: QuizQuestion;
   isLastQuestion: boolean;
+  title: string;
 }
 
-const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion }) => {
+const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion, title }) => {
   const dispatch = useAppDispatch();
 
   const activeOptionInfo = quizQuestion.songs.filter(
@@ -31,22 +36,48 @@ const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion }) => {
   const isNextQuestionButtonDisabled = !quizQuestion.isCorrectAnswerSelected;
 
   return (
-    <div>
-      {/* Question[n].QuestionAudioUrl */}
-      <audio controls src={`${quizQuestion.questionAudioUrl}`}></audio>
-
-      {/* Question[n].Songs[] */}
-      {quizQuestion.songs.map((song) => {
-        return (
-          <Option
-            key={song.id}
-            {...song}
-            isCorrectAnswerSelected={quizQuestion.isCorrectAnswerSelected}
-            correctAnswerId={quizQuestion.correctAnswerId}
-            questionId={quizQuestion.id}
+    <div className="question__container">
+      <div className="audio__container">
+        <div className="question__header">
+          <div className="question__title">{title} song</div>
+          <div className="question__subtitle">
+            Listen to the audio and guess what song is it from the list
+          </div>
+        </div>
+        <div className="question__audio">
+          <img
+            className="audio__picture"
+            id="audio_picture"
+            src={AudioPicture}
+            alt="audio"
           />
-        );
-      })}
+          <audio
+            className="audio__player"
+            controls
+            src={`${quizQuestion.questionAudioUrl}`}
+          ></audio>
+        </div>
+
+        <div className="question__options">
+          <ul className="options__list">
+            {quizQuestion.songs.map((song) => {
+              return (
+                <li className="option">
+                  <Option
+                    key={song.id}
+                    {...song}
+                    isCorrectAnswerSelected={
+                      quizQuestion.isCorrectAnswerSelected
+                    }
+                    correctAnswerId={quizQuestion.correctAnswerId}
+                    questionId={quizQuestion.id}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
 
       {activeOptionInfo ? (
         <OptionInfo

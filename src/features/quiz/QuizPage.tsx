@@ -50,10 +50,13 @@ const QuizPage: React.FC = () => {
     <div className="quiz__container">
       <QuestionHeader />
       <ProgressBar progressBar={progressBar} />
-      <Question
-        quizQuestion={currentQuestion}
-        isLastQuestion={isLastQuestion}
-      />
+      <div className="quiz__question">
+        <Question
+          quizQuestion={currentQuestion}
+          isLastQuestion={isLastQuestion}
+          title={currentQuestion.genre}
+        />
+      </div>
     </div>
   );
 };

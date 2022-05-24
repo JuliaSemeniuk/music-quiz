@@ -22,7 +22,7 @@ const OptionInfo: React.FC<Props> = ({
   description,
 }) => {
   return (
-    <div>
+    <div className="">
       <div>{`${name} - ${songTitle}`}</div>
       <div>
         <img style={{ width: "50%" }} src={mediaUrl + image} />
