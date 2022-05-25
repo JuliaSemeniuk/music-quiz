@@ -1,0 +1,75 @@
+@import "../scss/custom";
+
+.score__container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.logo__image {
+  position: absolute;
+  top: 90px;
+}
+
+.score-image__container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  position: relative;
+  margin-top: -345px;
+  img {
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.score__wrapper {
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  background-color: $deepblue-medium;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 3;
+}
+
+.score__result {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.score__content {
+  width: 57%;
+  height: 32.5%;
+  background-color: $deepblue-dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.score__title {
+  padding-top: 50px;
+  font-size: 30px;
+  font-family: "Prompt", sans-serif;
+  font-weight: bold;
+}
+
+.score__subtitle {
+  padding: 25px;
+  color: $gray-light;
+}
+
+.try-again__button {
+  padding-top: 30px;
+}
