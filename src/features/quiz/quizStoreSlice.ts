@@ -44,7 +44,7 @@ export interface QuizState {
 
 const initialState: QuizState = {
   userName: "",
-  isNameReady: true, //change to FALSE after CSS QUIZ PAGE
+  isNameReady: false, //change to FALSE after CSS QUIZ PAGE
   finalScore: 0,
   isRepeat: false,
   questions: [],

@@ -6,6 +6,9 @@ import {
 } from "../features/quiz/quizStoreSlice";
 import React from "react";
 
+import Logo from "../images/logo.svg";
+import "../components/login.scss";
+
 const Login = () => {
   const dispatch = useAppDispatch();
 
@@ -22,20 +25,35 @@ const Login = () => {
   //   const isStartQuizButtonDisabled = !isNameReady;
 
   return (
-    <div>
-      <input
-        value={userName}
-        placeholder="type your name here..."
-        type="text"
-        onChange={getUserName}
-      />
-      {
-        <Button
-          onButtonClick={startQuiz}
-          isDisabled={!userName.length}
-          title="Start Quiz"
-        />
-      }
+    <div className="login__container">
+      <div className="login__content">
+        <div className="logo__image">
+          <img src={Logo} alt="" />
+        </div>
+
+        <form className="login__form" action="">
+          <div className="form__title">Welcome!</div>
+          <div className="form__subtitle">
+            Please enter your name and lets start our quiz!
+          </div>
+          <input
+            className="form__input"
+            value={userName}
+            placeholder="type your name here..."
+            type="text"
+            onChange={getUserName}
+          />
+          <div className="login__button">
+            {
+              <Button
+                onButtonClick={startQuiz}
+                isDisabled={!userName.length}
+                title="Start Quiz"
+              />
+            }
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
