@@ -1,4 +1,4 @@
-@import "../scss/custom";
+@import "../scss/variables";
 
 .score__container {
   height: 100vh;
@@ -41,8 +41,8 @@
 }
 
 .score__result {
-  font-size: 48px;
-  font-weight: bold;
+  font-size: $score-font-size;
+  font-weight: $font-weight-bold;
 }
 
 .score__content {
@@ -60,9 +60,9 @@
 
 .score__title {
   padding-top: 50px;
-  font-size: 30px;
-  font-family: "Prompt", sans-serif;
-  font-weight: bold;
+  font-size: $title-font-size;
+  font-family: $headers-font-family;
+  font-weight: $font-weight-bold;
 }
 
 .score__subtitle {

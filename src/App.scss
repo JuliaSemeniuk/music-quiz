@@ -1,8 +1,7 @@
-@import "./scss/custom";
+@import "./scss/variables";
 
 html,
 body {
-  // height: 100%;
   background-color: $deepblue-darkest;
 }
 
@@ -14,8 +13,8 @@ body {
   display: flex;
   flex-direction: column;
   line-height: 1;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: $body-font-size;
+  font-weight: $font-weight-regular;
   color: $white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $body-font-family;
 }

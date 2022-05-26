@@ -1,4 +1,4 @@
-@import "../scss/custom";
+@import "../scss/variables";
 
 .header__container {
   padding: 12px 0px;
@@ -13,7 +13,7 @@
 }
 .header__username {
   margin-right: 20px;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
 }
 .header__score-title {
   margin-right: 8px;

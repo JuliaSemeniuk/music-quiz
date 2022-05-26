@@ -1,6 +1,6 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-//colors
+//COLORS:
 $white: #fff;
 $black: #000;
 
@@ -24,6 +24,19 @@ $red-light: #b55a5a;
 $green-dark: #3e6441;
 $green-light: #619a65;
 
-//typography
-$body-font-family: "Arial";
-$headers-font-family: "Prompt";
+//TYPOGRAPHY:
+
+//font-family:
+$body-font-family: Arial, Helvetica, sans-serif;
+$headers-font-family: "Prompt", sans-serif;
+
+//font-size:
+$input-font-size: 14px;
+$body-font-size: 16px;
+$button-font-size: 20px;
+$title-font-size: 30px;
+$score-font-size: 48px;
+
+//font-weight:
+$font-weight-bold: bold;
+$font-weight-regular: 400;

@@ -1,4 +1,5 @@
-@import "../scss/custom";
+@import "../scss/variables";
+
 .option-info__container {
   width: 55%;
 }
@@ -10,9 +11,9 @@
 }
 
 .option-info__title {
-  font-size: 20px;
-  font-family: "Prompt", sans-serif;
-  font-weight: bold;
+  font-size: $button-font-size;
+  font-family: $headers-font-family;
+  font-weight: $font-weight-bold;
   padding: 8px 0px;
 }
 

@@ -1,4 +1,4 @@
-@import "../scss/custom";
+@import "../scss/variables";
 
 .button__container {
   width: 100%;
@@ -14,13 +14,9 @@
   padding: 20px;
   border-radius: 5px;
   color: $white;
-  font-weight: bold;
-  font-size: 20px;
-  //   background: linear-gradient(
-  //     90deg,
-  //     rgba(128, 128, 128, 1) 0%,
-  //     rgba(101, 101, 101, 1) 100%
-  //   );
+  font-weight: $font-weight-bold;
+  font-size: $button-font-size;
+  border: none;
 }
 
 .button__disabled {

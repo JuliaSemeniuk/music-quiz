@@ -1,13 +1,9 @@
-@import "../../scss/custom";
+@import "../../scss/variables";
 
-.quiz__container {
-  // justify-content: space-between;
-}
 .quiz__question {
   align-items: flex-start;
   flex-direction: column;
   display: flex;
-  // width: calc(33% - 48px);
   margin: 0 auto;
   padding: 32px 48px 0px;
   background-color: $deepblue-darkest;
