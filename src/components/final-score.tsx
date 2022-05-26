@@ -1,8 +1,10 @@
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { makeQuizReadyToRepeat } from "../features/quiz/quizStoreSlice";
+
 import Button from "./button";
 
 import "../components/final-score.scss";
+
 import Logo from "../images/logo.svg";
 import ScoreAroung from "../images/score-around.svg";
 

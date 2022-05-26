@@ -1,5 +1,4 @@
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import classnames from "classnames";
 
 import {
   makeOptionSelected,
@@ -8,6 +7,9 @@ import {
 } from "../features/quiz/quizStoreSlice";
 
 import "../components/option.scss";
+
+import classnames from "classnames";
+
 import CheckItem from "../images/check-item.svg";
 import CrossCheckItem from "../images/cross-check-item.svg";
 
@@ -19,8 +21,8 @@ interface Props {
   image: string;
   name: string;
 
-  isActive: boolean; //just for choose and show info
-  isSelected: boolean; //isAnswered - for highlighting red or green
+  isActive: boolean;
+  isSelected: boolean;
   correctAnswerId: string;
   isCorrectAnswerSelected: boolean;
   questionId: string;
@@ -36,16 +38,6 @@ const Option: React.FC<Props> = ({
 }) => {
   const dispatch = useAppDispatch();
 
-  // let style = {};
-
-  // if (isSelected) {
-  //   if (id === correctAnswerId) {
-  //     style = { backgroundColor: "green" };
-  //   } else {
-  //     style = { backgroundColor: "red" };
-  //   }
-  // }
-
   return (
     <div
       className={classnames("option__item", {
@@ -60,7 +52,6 @@ const Option: React.FC<Props> = ({
         dispatch(makeOptionSelected(id));
         dispatch(setQuestionScore(questionId));
       }}
-      // style={style}
     >
       <div className="item__container">
         {isSelected ? (

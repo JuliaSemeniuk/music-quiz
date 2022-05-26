@@ -1,4 +1,5 @@
 import Arrow from "../images/arrow.svg";
+
 import "../components/progress-bar-item.scss";
 
 interface Props {

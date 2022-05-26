@@ -1,21 +1,20 @@
-import React, { useEffect } from "react";
-import { isTemplateTail } from "typescript";
-import "./App.scss";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
+
+import "./App.scss";
+
 import FinalScore from "./components/final-score";
 import Login from "./components/login";
-import Question from "./components/question";
 import QuizPage from "./features/quiz/QuizPage";
+
 import {
   BackendQuizQuestion,
   init,
-  Song,
   QuizQuestion,
   BackendSong,
-  quizStoreSlice,
 } from "./features/quiz/quizStoreSlice";
 
-//API Links:
+//API links:
 const url = "https://levi9-song-quiz.herokuapp.com/api/data";
 export const mediaUrl = "https://levi9-song-quiz.herokuapp.com/api/";
 
@@ -35,19 +34,14 @@ const chooseRandomSong = (songs: BackendSong[]) => {
   }
 };
 
-//update format data as we need
 const dataForStore = (beckendData: BackendQuizQuestion[]): QuizQuestion[] => {
-  return beckendData.map((beckendQuiz, index) => {
-    // const randomSong = chooseRandomSong(beckendQuiz.data);
-    // console.log("randomSong", randomSong);
+  return beckendData.map((beckendQuiz) => {
     return {
       genre: beckendQuiz.genre,
       id: beckendQuiz.id,
-      // questionAudioUrl: mediaUrl + randomSong.audio,
       questionAudioUrl: "",
       isFinished: false,
       isCorrectAnswerSelected: false,
-      // correctAnswerId: randomSong.id,
       correctAnswerId: "",
       score: 4,
       songs: beckendQuiz.data.map((song) => {

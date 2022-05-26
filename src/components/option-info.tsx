@@ -1,4 +1,5 @@
 import { mediaUrl } from "../../src/App";
+
 import "../components/option-info.scss";
 
 interface Props {
@@ -8,11 +9,6 @@ interface Props {
   description: string;
   image: string;
   name: string;
-
-  //   isActive: boolean; //just for choose and show info
-  //   isSelected: boolean; //isAnswered - for highlighting red or green
-  //   correctAnswerId: string;
-  //   isCorrectAnswerSelected: boolean;
 }
 
 const OptionInfo: React.FC<Props> = ({

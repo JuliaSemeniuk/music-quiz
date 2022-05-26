@@ -1,13 +1,14 @@
-import Button from "./button";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import {
   fillUserName,
   makeQuizReadyToStart,
 } from "../features/quiz/quizStoreSlice";
-import React from "react";
+
+import Button from "./button";
+
+import "../components/login.scss";
 
 import Logo from "../images/logo.svg";
-import "../components/login.scss";
 
 const Login = () => {
   const dispatch = useAppDispatch();
@@ -21,8 +22,6 @@ const Login = () => {
   const startQuiz = () => {
     dispatch(makeQuizReadyToStart(""));
   };
-
-  //   const isStartQuizButtonDisabled = !isNameReady;
 
   return (
     <div className="login__container">

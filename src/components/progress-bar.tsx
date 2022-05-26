@@ -1,4 +1,5 @@
 import ProgressBarItem from "./progress-bar-item";
+
 import "../components/progress-bar.scss";
 
 interface ProgressBarItem {

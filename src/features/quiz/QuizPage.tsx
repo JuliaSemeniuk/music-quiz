@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { useAppSelector } from "../../app/hooks";
+
 import Question from "../../components/question";
 import { QuizQuestion } from "./quizStoreSlice";
 import QuestionHeader from "../../components/qustion-header";
@@ -21,7 +22,6 @@ const getCurrentQuestion = (
 const QuizPage: React.FC = () => {
   const questions = useAppSelector((state) => state.quiz.questions);
 
-  //якщо довжина = 1, це значить, що у всіх інших елементів масиву isFinished = true
   const isLastQuestion =
     questions.filter((question) => question.isFinished === false).length === 1;
 

@@ -1,20 +1,21 @@
+import React from "react";
 import { QuizQuestion } from "../features/quiz/quizStoreSlice";
+
 import Button from "./button";
 import Option from "./option";
 import OptionInfo from "./option-info";
 import { mediaUrl } from "../App";
 
-//next-question-button
 import {
   makeQuestionFinished,
   addScore,
 } from "../features/quiz/quizStoreSlice";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import React from "react";
+
+import { useAppDispatch } from "../app/hooks";
+
 import "../components/question.scss";
 
 import AudioPicture from "../images/audio-picture.svg";
-import AudioPlayPicture from "../images/play-icon.svg";
 
 interface Props {
   quizQuestion: QuizQuestion;
@@ -23,12 +24,7 @@ interface Props {
   isCorrectAnswerSelected: boolean;
 }
 
-const Question: React.FC<Props> = ({
-  quizQuestion,
-  isLastQuestion,
-  title,
-  isCorrectAnswerSelected,
-}) => {
+const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion, title }) => {
   const dispatch = useAppDispatch();
 
   const activeOptionInfo = quizQuestion.songs.filter(

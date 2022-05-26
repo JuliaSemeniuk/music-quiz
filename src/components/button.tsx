@@ -1,7 +1,10 @@
 import React from "react";
+
 import "../components/button.scss";
-import Arrow from "../images/arrow.svg";
+
 import classnames from "classnames";
+
+import Arrow from "../images/arrow.svg";
 
 interface Props {
   isDisabled?: boolean;
