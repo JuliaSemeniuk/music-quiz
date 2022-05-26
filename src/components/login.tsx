@@ -10,7 +10,7 @@ import "../components/login.scss";
 
 import Logo from "../images/logo.svg";
 
-const Login = () => {
+const Login: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const getUserName = (event: any) => {
