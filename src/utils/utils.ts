@@ -4,6 +4,7 @@ import {
   QuizQuestion,
   BackendSong,
 } from "../features/quiz/quizStoreSlice";
+
 export const chooseRandomSong = (songs: BackendSong[]) => {
   const randomValue = Math.random();
 
@@ -15,9 +16,9 @@ export const chooseRandomSong = (songs: BackendSong[]) => {
   }
   if (randomValue > 0.5 && randomValue < 0.75) {
     return songs[2];
-  } else {
-    return songs[3];
   }
+
+  return songs[3];
 };
 
 export const dataForStore = (
