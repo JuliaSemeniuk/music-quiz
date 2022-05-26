@@ -4,7 +4,7 @@ import { QuizQuestion } from "../features/quiz/quizStoreSlice";
 import Button from "./button";
 import Option from "./option";
 import OptionInfo from "./option-info";
-import { mediaUrl } from "../App";
+import { mediaUrl } from "../constants/constants";
 
 import {
   makeQuestionFinished,

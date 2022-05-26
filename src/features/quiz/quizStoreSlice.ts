@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { makeRandom } from "../../App";
+import { makeRandom } from "../../utils/utils";
 
 export interface BackendSong {
   audio: string;

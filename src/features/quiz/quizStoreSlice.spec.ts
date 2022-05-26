@@ -6,6 +6,10 @@ import React from "react";
 //   incrementByAmount,
 // } from './quizStoreSlice';
 
+it("", () => {
+  expect(true).toBe(true);
+});
+
 // describe('counter reducer', () => {
 //   const initialState: CounterState = {
 //     value: 3,

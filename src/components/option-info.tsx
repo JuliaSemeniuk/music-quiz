@@ -1,4 +1,4 @@
-import { mediaUrl } from "../../src/App";
+import { mediaUrl } from "../constants/constants";
 
 import "../components/option-info.scss";
 

@@ -4,7 +4,7 @@ import { useAppSelector } from "../../app/hooks";
 
 import Question from "../../components/question";
 import { QuizQuestion } from "./quizStoreSlice";
-import QuestionHeader from "../../components/qustion-header";
+import QuestionHeader from "../../components/question-header";
 import ProgressBar from "../../components/progress-bar";
 
 import "../quiz/QuizPage.scss";
