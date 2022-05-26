@@ -1,14 +1,14 @@
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
   fillUserName,
   makeQuizReadyToStart,
-} from "../features/quiz/quizStoreSlice";
+} from "../../features/quiz/quizStoreSlice";
 
-import Button from "./button";
+import Button from "../button/button";
 
-import "../components/login.scss";
+import "./login.scss";
 
-import Logo from "../images/logo.svg";
+import Logo from "../../images/logo.svg";
 
 const Login: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -41,6 +41,7 @@ const Login: React.FC = () => {
             placeholder="type your name here..."
             type="text"
             onChange={getUserName}
+            aria-label="login-input"
           />
           <div className="login__button">
             {

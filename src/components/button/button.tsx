@@ -1,10 +1,10 @@
 import React from "react";
 
-import "../components/button.scss";
+import "../button/button.scss";
 
 import classnames from "classnames";
 
-import Arrow from "../images/arrow.svg";
+import Arrow from "../../images/arrow.svg";
 
 interface Props {
   isDisabled?: boolean;
@@ -28,7 +28,7 @@ const Button: React.FC<Props> = ({
         type="button"
         disabled={isDisabled}
       >
-        {title.toUpperCase()}
+        {title}
         <img src={Arrow} alt="" />
       </button>
     </div>

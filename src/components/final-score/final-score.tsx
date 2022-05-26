@@ -1,12 +1,12 @@
-import { useAppSelector, useAppDispatch } from "../app/hooks";
-import { makeQuizReadyToRepeat } from "../features/quiz/quizStoreSlice";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { makeQuizReadyToRepeat } from "../../features/quiz/quizStoreSlice";
 
-import Button from "./button";
+import Button from "../button/button";
 
-import "../components/final-score.scss";
+import "./final-score.scss";
 
-import Logo from "../images/logo.svg";
-import ScoreAroung from "../images/score-around.svg";
+import Logo from "../../images/logo.svg";
+import ScoreAroung from "../../images/score-around.svg";
 
 interface Props {
   userName: string;

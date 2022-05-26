@@ -3,8 +3,8 @@ import { useAppDispatch, useAppSelector } from "./app/hooks";
 
 import "./App.scss";
 
-import FinalScore from "./components/final-score";
-import Login from "./components/login";
+import FinalScore from "./components/final-score/final-score";
+import Login from "./components/login/login";
 import QuizPage from "./features/quiz/QuizPage";
 
 import { init } from "./features/quiz/quizStoreSlice";

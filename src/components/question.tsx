@@ -1,7 +1,7 @@
 import React from "react";
 import { QuizQuestion } from "../features/quiz/quizStoreSlice";
 
-import Button from "./button";
+import Button from "./button/button";
 import Option from "./option";
 import OptionInfo from "./option-info";
 import { mediaUrl } from "../constants/constants";
