@@ -3,6 +3,7 @@ import {
   fillUserName,
   makeQuizReadyToStart,
 } from "../../features/quiz/quizStoreSlice";
+import BeatLoader from "react-spinners/BeatLoader";
 
 import Button from "../button/button";
 
@@ -10,7 +11,11 @@ import "./login.scss";
 
 import Logo from "../../images/logo.svg";
 
-const Login: React.FC = () => {
+interface Props {
+  isLoading: boolean;
+}
+
+const Login: React.FC<Props> = ({ isLoading }) => {
   const dispatch = useAppDispatch();
 
   const getUserName = (event: any) => {
@@ -26,33 +31,38 @@ const Login: React.FC = () => {
   return (
     <div className="login__container">
       <div className="login__content">
-        <div className="logo__image">
-          <img src={Logo} alt="" />
-        </div>
+        {isLoading && <BeatLoader color={"#FFFFFF"} loading={true} size={30} />}
+        {!isLoading && (
+          <>
+            <div className="logo__image">
+              <img src={Logo} alt="" />
+            </div>
 
-        <form className="login__form" action="">
-          <div className="form__title">Welcome!</div>
-          <div className="form__subtitle">
-            Please enter your name and lets start our quiz!
-          </div>
-          <input
-            className="form__input"
-            value={userName}
-            placeholder="type your name here..."
-            type="text"
-            onChange={getUserName}
-            aria-label="login-input"
-          />
-          <div className="login__button">
-            {
-              <Button
-                onButtonClick={startQuiz}
-                isDisabled={!userName.length}
-                title="Start Quiz"
+            <form className="login__form" action="">
+              <div className="form__title">Welcome!</div>
+              <div className="form__subtitle">
+                Please enter your name and lets start our quiz!
+              </div>
+              <input
+                className="form__input"
+                value={userName}
+                placeholder="type your name here..."
+                type="text"
+                onChange={getUserName}
+                aria-label="login-input"
               />
-            }
-          </div>
-        </form>
+              <div className="login__button">
+                {
+                  <Button
+                    onButtonClick={startQuiz}
+                    isDisabled={!userName.length}
+                    title="Start Quiz"
+                  />
+                }
+              </div>
+            </form>
+          </>
+        )}
       </div>
     </div>
   );

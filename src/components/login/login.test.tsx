@@ -8,7 +8,7 @@ describe("Login", () => {
   it("should allow letters to be inputed", () => {
     const utils = render(
       <Provider store={store}>
-        <Login />
+        <Login isLoading={false} />
       </Provider>
     );
     const input = utils.getByLabelText("login-input");

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
 
 import "./App.scss";
@@ -15,6 +15,7 @@ import { url } from "./constants/constants";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -27,8 +28,10 @@ function App() {
 
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(true);
       const preResult = await fetch(url);
       const result = await preResult.json();
+      setIsLoading(false);
       dispatch(init(makeRandom(dataForStore(result))));
     };
 
@@ -53,7 +56,7 @@ function App() {
     <div className="wrapper">
       <div className="container">
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Login isLoading={isLoading} />} />
           <Route path="/quiz" element={<QuizPage />} />
           <Route path="/score" element={<FinalScore userName={userName} />} />
         </Routes>
