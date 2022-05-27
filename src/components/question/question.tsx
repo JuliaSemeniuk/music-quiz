@@ -1,18 +1,18 @@
 import React from "react";
-import { QuizQuestion } from "../app/quiz-store-slice";
+import { QuizQuestion } from "../../app/quiz-store-slice";
 
-import Button from "./button/button";
-import Option from "./option/option";
-import OptionInfo from "./option-info/option-info";
-import { mediaUrl } from "../constants/constants";
+import Button from "../button/button";
+import Option from "../option/option";
+import OptionInfo from "../option-info/option-info";
+import { mediaUrl } from "../../constants/constants";
 
-import { makeQuestionFinished, addScore } from "../app/quiz-store-slice";
+import { makeQuestionFinished, addScore } from "../../app/quiz-store-slice";
 
-import { useAppDispatch } from "../app/hooks";
+import { useAppDispatch } from "../../app/hooks";
 
-import "../components/question.scss";
+import "./question.scss";
 
-import AudioPicture from "../images/audio-picture.svg";
+import AudioPicture from "../../images/audio-picture.svg";
 import classnames from "classnames";
 
 interface Props {

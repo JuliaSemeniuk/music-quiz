@@ -2,10 +2,10 @@ import React from "react";
 
 import { useAppSelector } from "../../app/hooks";
 
-import Question from "../../components/question";
+import Question from "../../components/question/question";
 import { QuizQuestion } from "../../app/quiz-store-slice";
-import QuestionHeader from "../../components/question-header";
-import ProgressBar from "../../components/progress-bar";
+import QuestionHeader from "../../components/question-header/question-header";
+import ProgressBar from "../../components/progress-bar/progress-bar";
 
 import "../quiz/quiz-page.scss";
 

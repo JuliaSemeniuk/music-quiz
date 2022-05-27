@@ -41,3 +41,10 @@
   color: $gray-light;
   text-align: center;
 }
+
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-timeline-container,
+audio::-webkit-media-controls-time-remaining-display {
+  display: none;
+}

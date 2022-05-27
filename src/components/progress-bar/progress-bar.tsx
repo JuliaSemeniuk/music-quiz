@@ -1,6 +1,6 @@
-import ProgressBarItem from "./progress-bar-item/progress-bar-item";
+import ProgressBarItem from "../progress-bar-item/progress-bar-item";
 
-import "../components/progress-bar.scss";
+import "./progress-bar.scss";
 
 interface ProgressBarItem {
   genre: string;
