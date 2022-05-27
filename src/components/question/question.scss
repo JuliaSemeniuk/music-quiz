@@ -12,11 +12,16 @@
   overflow: hidden;
   margin-bottom: 10px;
 
-  .question__container_image_bg {
+  @include mq($until: tablet) {
+    background: $deepblue-dark;
+    padding: 5px;
+  }
+
+  &.question__container_image_bg {
     background: $deepblue-dark no-repeat right -10% bottom -40%
       url("../../images/quiz-cover.svg");
 
-    @include mq($until: tablet) {
+    @include mq($until: wide) {
       background: $deepblue-dark;
     }
   }
@@ -85,4 +90,8 @@ audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-timeline-container,
 audio::-webkit-media-controls-time-remaining-display {
   display: none;
+}
+
+audio::-webkit-media-controls-timeline {
+  width: 120%;
 }

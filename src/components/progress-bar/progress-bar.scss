@@ -7,8 +7,4 @@
   border: 0 solid $deepblue-medium;
   border-bottom-width: 2px;
   background-color: $deepblue-dark;
-
-  @include mq($until: tablet) {
-    padding: 5px;
-  }
 }

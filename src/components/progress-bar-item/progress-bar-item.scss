@@ -36,11 +36,17 @@
   @include mq($until: tablet) {
     padding: 5px;
   }
-}
-.progressbar__genre {
-  text-transform: uppercase;
-  @include mq($until: tablet) {
-    font-size: 12px;
+
+  .progressbar__arrow {
+    @include mq($until: tablet) {
+      width: 15px;
+    }
+  }
+  .progressbar__genre {
+    text-transform: uppercase;
+    @include mq($until: tablet) {
+      font-size: 10px;
+    }
   }
 }
 
