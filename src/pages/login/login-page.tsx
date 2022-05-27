@@ -1,13 +1,10 @@
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import {
-  fillUserName,
-  makeQuizReadyToStart,
-} from "../../features/quiz/quizStoreSlice";
+import { fillUserName, makeQuizReadyToStart } from "../../app/quiz-store-slice";
 import BeatLoader from "react-spinners/BeatLoader";
 
-import Button from "../button/button";
+import Button from "../../components/button/button";
 
-import "./login.scss";
+import "./login-page.scss";
 
 import Logo from "../../images/logo.svg";
 

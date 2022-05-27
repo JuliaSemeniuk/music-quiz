@@ -1,15 +1,12 @@
 import React from "react";
-import { QuizQuestion } from "../features/quiz/quizStoreSlice";
+import { QuizQuestion } from "../app/quiz-store-slice";
 
 import Button from "./button/button";
 import Option from "./option/option";
 import OptionInfo from "./option-info/option-info";
 import { mediaUrl } from "../constants/constants";
 
-import {
-  makeQuestionFinished,
-  addScore,
-} from "../features/quiz/quizStoreSlice";
+import { makeQuestionFinished, addScore } from "../app/quiz-store-slice";
 
 import { useAppDispatch } from "../app/hooks";
 

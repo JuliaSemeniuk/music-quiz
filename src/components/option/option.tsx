@@ -4,7 +4,7 @@ import {
   makeOptionSelected,
   makeOptionActive,
   setQuestionScore,
-} from "../../features/quiz/quizStoreSlice";
+} from "../../app/quiz-store-slice";
 
 import "./option.scss";
 

@@ -3,7 +3,7 @@ import {
   BackendQuizQuestion,
   QuizQuestion,
   BackendSong,
-} from "../features/quiz/quizStoreSlice";
+} from "../app/quiz-store-slice";
 
 export const chooseRandomSong = (songs: BackendSong[]) => {
   const randomValue = Math.random();

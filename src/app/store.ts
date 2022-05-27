@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import quizStoreSlice from "../features/quiz/quizStoreSlice";
+import quizStoreSlice from "./quiz-store-slice";
 
 export const store = configureStore({
   reducer: {

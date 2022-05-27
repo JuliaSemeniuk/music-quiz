@@ -10,7 +10,7 @@ import quizReducer, {
   setQuestionScore,
   addScore,
   makeQuizReadyToRepeat,
-} from "./quizStoreSlice";
+} from "./quiz-store-slice";
 
 describe("counter reducer", () => {
   const initialState: QuizState = {

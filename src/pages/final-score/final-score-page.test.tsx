@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import { render } from "@testing-library/react";
 import { store } from "../../app/store";
 
-import FinalScore from "./final-score";
+import FinalScore from "./final-score-page";
 
 describe("FinalScore", () => {
   it("should render FinalScore with correct name", () => {

@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import { fireEvent, render } from "@testing-library/react";
 import { store } from "../../app/store";
 
-import Login from "./login";
+import Login from "./login-page";
 
 describe("Login", () => {
   it("should allow letters to be inputed", () => {

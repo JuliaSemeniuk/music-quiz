@@ -3,13 +3,11 @@ import React from "react";
 import { useAppSelector } from "../../app/hooks";
 
 import Question from "../../components/question";
-import { QuizQuestion } from "./quizStoreSlice";
+import { QuizQuestion } from "../../app/quiz-store-slice";
 import QuestionHeader from "../../components/question-header";
 import ProgressBar from "../../components/progress-bar";
-import Button from "../../components/button/button";
-import { makeQuestionFinished } from "./quizStoreSlice";
 
-import "../quiz/QuizPage.scss";
+import "../quiz/quiz-page.scss";
 
 const getCurrentQuestion = (
   questions: QuizQuestion[]
@@ -28,13 +26,6 @@ const QuizPage: React.FC = () => {
     questions.filter((question) => question.isFinished === false).length === 1;
 
   const currentQuestion = getCurrentQuestion(questions);
-
-  // const activateNextQuestionButton = (event: React.SyntheticEvent) => {
-  //   dispatch(makeQuestionFinished(quizQuestion.id));
-  //   dispatch(addScore(quizQuestion.score));
-  // };
-
-  // const isNextQuestionButtonDisabled = !quizQuestion.isCorrectAnswerSelected;
 
   if (currentQuestion === undefined) {
     return null;
@@ -67,11 +58,6 @@ const QuizPage: React.FC = () => {
           isCorrectAnswerSelected={currentQuestion.isCorrectAnswerSelected}
         />
       </div>
-      {/* <Button
-        isDisabled={isNextQuestionButtonDisabled}
-        onButtonClick={activateNextQuestionButton}
-        title={!isLastQuestion ? "next question" : "see my score"}
-      /> */}
     </div>
   );
 };

@@ -3,11 +3,11 @@ import { useAppDispatch, useAppSelector } from "./app/hooks";
 
 import "./App.scss";
 
-import FinalScore from "./components/final-score/final-score";
-import Login from "./components/login/login";
-import QuizPage from "./features/quiz/QuizPage";
+import FinalScore from "./pages/final-score/final-score-page";
+import Login from "./pages/login/login-page";
+import QuizPage from "./pages/quiz/quiz-page";
 
-import { init } from "./features/quiz/quizStoreSlice";
+import { init } from "./app/quiz-store-slice";
 
 import { dataForStore, makeRandom } from "./utils/utils";
 import { url } from "./constants/constants";
