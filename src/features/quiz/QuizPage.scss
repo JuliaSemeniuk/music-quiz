@@ -1,4 +1,5 @@
 @import "../../scss/variables";
+@import "../../../node_modules/sass-mq/mq";
 
 .quiz__question {
   align-items: flex-start;
@@ -8,4 +9,8 @@
   padding: 32px 48px 0px;
   background-color: $deepblue-darkest;
   box-sizing: content-box;
+
+  @include mq($until: tablet) {
+    padding: 5px;
+  }
 }

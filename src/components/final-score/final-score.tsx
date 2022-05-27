@@ -21,7 +21,7 @@ const FinalScore: React.FC<Props> = ({ userName }) => {
   };
   return (
     <div className="score__container">
-      <div className="logo__image">
+      <div className="logo__image-final">
         <img src={Logo} alt="" />
       </div>
       <div className="score-image__container">

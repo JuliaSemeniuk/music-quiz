@@ -1,4 +1,5 @@
 @import "../../scss/variables";
+@import "../../../node_modules/sass-mq/mq";
 
 .score__container {
   height: 100vh;
@@ -8,9 +9,13 @@
   position: relative;
 }
 
-.logo__image {
+.logo__image-final {
   position: absolute;
   top: 90px;
+
+  @include mq($until: tablet) {
+    top: 25px;
+  }
 }
 
 .score-image__container {
@@ -25,6 +30,9 @@
   img {
     position: absolute;
     z-index: 1;
+    @include mq($until: tablet) {
+      width: 65%;
+    }
   }
 }
 
@@ -38,6 +46,11 @@
   align-items: center;
   position: absolute;
   z-index: 3;
+
+  @include mq($until: tablet) {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .score__result {
@@ -56,6 +69,10 @@
   padding: 90px 0;
   position: absolute;
   z-index: 2;
+  @include mq($until: tablet) {
+    width: 90%;
+    height: 60%;
+  }
 }
 
 .score__title {
@@ -63,6 +80,7 @@
   font-size: $title-font-size;
   font-family: $headers-font-family;
   font-weight: $font-weight-bold;
+  text-align: center;
 }
 
 .score__subtitle {

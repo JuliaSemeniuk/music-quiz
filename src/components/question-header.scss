@@ -1,9 +1,14 @@
 @import "../scss/variables";
+@import "../../node_modules/sass-mq/mq";
 
 .header__container {
   padding: 12px 0px;
   display: flex;
   justify-content: space-between;
+
+  // @include mq($until: tablet) {
+  //   padding: 5px;
+  // }
 }
 
 .header__items {

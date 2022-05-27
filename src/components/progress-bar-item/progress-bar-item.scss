@@ -1,4 +1,5 @@
 @import "../../scss/variables";
+@import "../../../node_modules/sass-mq/mq";
 
 .progressbar__item {
   width: 25%;
@@ -19,9 +20,16 @@
   align-items: center;
   justify-content: space-around;
   height: 47px;
+
+  @include mq($until: tablet) {
+    padding: 5px;
+  }
 }
 .progressbar__genre {
   text-transform: uppercase;
+  @include mq($until: tablet) {
+    font-size: 12px;
+  }
 }
 
 .violet {
