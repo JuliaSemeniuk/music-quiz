@@ -45,7 +45,7 @@ describe("counter reducer", () => {
       },
     ];
     const actual = quizReducer(initialState, init(question));
-    console.log("actual: ", actual);
+
     expect(actual.questions).toEqual(question);
   });
 

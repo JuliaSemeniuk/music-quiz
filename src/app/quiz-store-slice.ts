@@ -54,7 +54,6 @@ export const quizStoreSlice = createSlice({
   initialState,
   reducers: {
     init: (state, action) => {
-      console.log("action", action);
       state.questions = action.payload;
     },
     makeOptionSelected: (state, action) => {

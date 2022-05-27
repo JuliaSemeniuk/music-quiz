@@ -36,7 +36,7 @@ function App() {
     };
 
     getData();
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (!isNameReady) {
@@ -50,7 +50,7 @@ function App() {
     }
 
     navigate("/quiz");
-  }, [isNameReady, isQuizEnded]);
+  }, [isNameReady, isQuizEnded, navigate]);
 
   return (
     <div className="wrapper">
