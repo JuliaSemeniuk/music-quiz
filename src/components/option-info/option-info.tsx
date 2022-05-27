@@ -1,6 +1,6 @@
-import { mediaUrl } from "../constants/constants";
+import { mediaUrl } from "../../constants/constants";
 
-import "../components/option-info.scss";
+import "./option-info.scss";
 
 interface Props {
   id: string;

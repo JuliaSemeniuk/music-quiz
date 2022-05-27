@@ -1,17 +1,17 @@
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 
 import {
   makeOptionSelected,
   makeOptionActive,
   setQuestionScore,
-} from "../features/quiz/quizStoreSlice";
+} from "../../features/quiz/quizStoreSlice";
 
-import "../components/option.scss";
+import "./option.scss";
 
 import classnames from "classnames";
 
-import CheckItem from "../images/check-item.svg";
-import CrossCheckItem from "../images/cross-check-item.svg";
+import CheckItem from "../../images/check-item.svg";
+import CrossCheckItem from "../../images/cross-check-item.svg";
 
 interface Props {
   id: string;

@@ -70,7 +70,7 @@ describe("counter reducer", () => {
     const actual = quizReducer(
       {
         ...initialState,
-        questions,
+        questions: questions as any,
       },
       makeOptionSelected("0-2")
     );
@@ -111,7 +111,7 @@ describe("counter reducer", () => {
     const actual = quizReducer(
       {
         ...initialState,
-        questions,
+        questions: questions as any,
       },
       makeOptionActive("0-2")
     );
@@ -240,7 +240,7 @@ describe("counter reducer", () => {
       ],
     };
 
-    const actual = quizReducer(state, makeQuizReadyToRepeat(""));
+    const actual = quizReducer(state as any, makeQuizReadyToRepeat(""));
     expect(actual).toEqual({
       isRepeat: true,
       finalScore: 0,

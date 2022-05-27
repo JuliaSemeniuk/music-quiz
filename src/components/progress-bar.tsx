@@ -1,4 +1,4 @@
-import ProgressBarItem from "./progress-bar-item";
+import ProgressBarItem from "./progress-bar-item/progress-bar-item";
 
 import "../components/progress-bar.scss";
 
