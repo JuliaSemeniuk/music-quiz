@@ -20,7 +20,10 @@
 .option-info__image {
   padding-top: 20px;
 }
-
+.option-info__image img {
+  height: 35vh;
+  object-fit: cover;
+}
 .option-info__image img,
 .option-info__player {
   width: 100%;
