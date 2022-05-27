@@ -23,10 +23,17 @@
 .option-info__image img {
   height: 35vh;
   object-fit: cover;
+  border: 1px solid $deepblue-medium;
+  border-radius: 5px 5px 0px 0px;
 }
 .option-info__image img,
 .option-info__player {
   width: 100%;
+}
+
+.option-info__player {
+  border: 1px solid $deepblue-medium;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .option-info__description {

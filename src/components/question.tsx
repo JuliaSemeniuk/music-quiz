@@ -16,6 +16,7 @@ import { useAppDispatch } from "../app/hooks";
 import "../components/question.scss";
 
 import AudioPicture from "../images/audio-picture.svg";
+import classnames from "classnames";
 
 interface Props {
   quizQuestion: QuizQuestion;
@@ -44,8 +45,6 @@ const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion, title }) => {
     ? mediaUrl + correctAnswer.image
     : AudioPicture;
 
-  console.log(correctAnswer);
-
   const activateNextQuestionButton = (event: React.SyntheticEvent) => {
     dispatch(makeQuestionFinished(quizQuestion.id));
     dispatch(addScore(quizQuestion.score));
@@ -55,7 +54,11 @@ const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion, title }) => {
 
   return (
     <>
-      <div className="question__container">
+      <div
+        className={classnames("question__container", {
+          question__container_image_bg: !activeOptionInfo,
+        })}
+      >
         <div className="audio__container">
           <div className="question__header">
             <div className="question__title">{title} song</div>
@@ -107,7 +110,6 @@ const Question: React.FC<Props> = ({ quizQuestion, isLastQuestion, title }) => {
           />
         ) : null}
       </div>
-
       <Button
         isDisabled={isNextQuestionButtonDisabled}
         onButtonClick={activateNextQuestionButton}

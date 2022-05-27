@@ -5,13 +5,25 @@
   width: 25%;
 }
 
-.progressbar__item:last-child {
-  .progressbar__arrow {
-    display: none;
+.progressbar__item {
+  &:first-child {
+    .progressbar__stripe {
+      border-radius: 5px 0 0 5px;
+    }
+  }
+
+  &:last-child {
+    .progressbar__stripe {
+      border-radius: 0 5px 5px 0;
+    }
+
+    .progressbar__arrow {
+      display: none;
+    }
   }
 }
 .progressbar__stripe {
-  height: 10px;
+  height: 4px;
   width: 100%;
 }
 

@@ -1,11 +1,25 @@
 @import "../scss/variables";
+@import "../../node_modules/sass-mq/mq";
 
 .question__container {
   width: 100%;
-  height: 65vh;
+  padding: 32px 48px;
+  background-color: $deepblue-dark;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  @include mq($until: tablet) {
+    background: $deepblue-dark;
+  }
+}
+
+.question__container_image_bg {
+  background: $deepblue-dark no-repeat right -10% bottom -40%
+    url("../images/quiz-cover.svg");
 }
 
 .question__header {
