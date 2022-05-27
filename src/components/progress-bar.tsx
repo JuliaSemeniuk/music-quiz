@@ -15,7 +15,7 @@ interface Props {
 
 const ProgressBar: React.FC<Props> = ({ progressBar }) => {
   return (
-    <div className="quiz__progressbar progressbar">
+    <div className="quiz__progressbar">
       {progressBar.map((progressBarItem, index) => {
         return (
           <ProgressBarItem

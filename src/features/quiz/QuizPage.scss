@@ -6,9 +6,10 @@
   flex-direction: column;
   display: flex;
   margin: 0 auto;
-  padding: 32px 48px 0px;
+  padding: 32px 48px;
   background-color: $deepblue-darkest;
   box-sizing: content-box;
+  background-color: $deepblue-dark;
 
   @include mq($until: tablet) {
     padding: 5px;

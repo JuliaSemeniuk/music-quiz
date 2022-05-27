@@ -1,11 +1,12 @@
 @import "../scss/variables";
 @import "../../node_modules/sass-mq/mq";
 
-.progressbar {
+.quiz__progressbar {
   display: flex;
   justify-content: space-between;
   border: 0 solid $deepblue-medium;
   border-bottom-width: 2px;
+  background-color: $deepblue-dark;
 
   @include mq($until: tablet) {
     padding: 5px;
